@@ -1,0 +1,25 @@
+name: Test app store
+
+on:
+  pull_request:
+    paths:
+      - "badge/apps/**"
+      - ".github/scripts/build_store_catalog.py"
+      - ".github/scripts/tests/test_app_store.py"
+      - ".github/workflows/test-app-store.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test store storage and downloads
+        run: python -m unittest discover -s .github/scripts/tests -p 'test_app_store.py' -v
+      - name: Verify published file sizes and checksums
+        run: python .github/scripts/build_store_catalog.py --check

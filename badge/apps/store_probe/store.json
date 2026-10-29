@@ -1,0 +1,5 @@
+{
+  "title": "Store Probe",
+  "description": "A tiny app to test writable-storage launching.",
+  "files": ["__init__.py"]
+}

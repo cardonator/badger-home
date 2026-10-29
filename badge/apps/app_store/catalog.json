@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "apps": [
+    {
+      "id": "store_probe",
+      "title": "Store Probe",
+      "description": "A tiny app to test writable-storage launching.",
+      "files": [
+        {
+          "path": "__init__.py",
+          "size": 711,
+          "sha256": "c99615147c31555b3d1ed3fa8aaa94a77a099dad6f503e60e292c635223ade39"
+        }
+      ]
+    }
+  ]
+}
